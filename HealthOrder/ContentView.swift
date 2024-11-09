@@ -8,16 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var isLoading = true
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            if isLoading {
+                Text("HealthOrder")
+            } else {
+                WelcomeView()
+            }
+        }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                isLoading = false
+            }
         }
         .padding()
     }
 }
+
+
 
 #Preview {
     ContentView()

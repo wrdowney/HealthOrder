@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		38D042D32CDFA5580009F8DC /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 38D042D22CDFA5580009F8DC /* Lottie */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		38D0429D2CDFA2620009F8DC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -30,11 +34,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		38D0428E2CDFA2620009F8DC /* HealthOrder */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = HealthOrder;
-			sourceTree = "<group>";
-		};
 		38D0429F2CDFA2620009F8DC /* HealthOrderTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = HealthOrderTests;
@@ -45,6 +44,11 @@
 			path = HealthOrderUITests;
 			sourceTree = "<group>";
 		};
+		38D042C92CDFA4300009F8DC /* HealthOrder */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = HealthOrder;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38D042D32CDFA5580009F8DC /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,7 +80,7 @@
 		38D042832CDFA2620009F8DC = {
 			isa = PBXGroup;
 			children = (
-				38D0428E2CDFA2620009F8DC /* HealthOrder */,
+				38D042C92CDFA4300009F8DC /* HealthOrder */,
 				38D0429F2CDFA2620009F8DC /* HealthOrderTests */,
 				38D042A92CDFA2620009F8DC /* HealthOrderUITests */,
 				38D0428D2CDFA2620009F8DC /* Products */,
@@ -108,10 +113,11 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				38D0428E2CDFA2620009F8DC /* HealthOrder */,
+				38D042C92CDFA4300009F8DC /* HealthOrder */,
 			);
 			name = HealthOrder;
 			packageProductDependencies = (
+				38D042D22CDFA5580009F8DC /* Lottie */,
 			);
 			productName = HealthOrder;
 			productReference = 38D0428C2CDFA2620009F8DC /* HealthOrder.app */;
@@ -195,6 +201,9 @@
 			);
 			mainGroup = 38D042832CDFA2620009F8DC;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				38D042D12CDFA5580009F8DC /* XCRemoteSwiftPackageReference "lottie-spm" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 38D0428D2CDFA2620009F8DC /* Products */;
 			projectDirPath = "";
@@ -552,6 +561,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		38D042D12CDFA5580009F8DC /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		38D042D22CDFA5580009F8DC /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 38D042D12CDFA5580009F8DC /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 38D042842CDFA2620009F8DC /* Project object */;
 }
