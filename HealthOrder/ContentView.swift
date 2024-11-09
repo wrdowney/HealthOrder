@@ -7,28 +7,24 @@
 
 import SwiftUI
 
-extension AnyTransition {
-    static var moveEdgeAndSuccess: AnyTransition {
-        UINotificationFeedbackGenerator().notificationOccurred(.success)
-        return AnyTransition.move(edge: .leading)
-    }
-}
-
 struct ContentView: View {
     @State private var isLoading = true
     @State private var showLaunchView: Bool = true
     
     var body: some View {
         ZStack {
-            Text("Hi")
+            HomeView()
             
             ZStack{
                 if showLaunchView {
                     LaunchView(showLaunchView: $showLaunchView)
-                        .transition(.moveEdgeAndSuccess)
+                        .transition(.move(edge: .leading))
                 }
             }
             .zIndex(2.0)
+        }
+        .onChange(of: showLaunchView) {
+            UINotificationFeedbackGenerator().notificationOccurred(.success)
         }
     }
 }
