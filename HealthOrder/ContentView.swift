@@ -7,27 +7,31 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    @State private var isLoading = true
-    
-    var body: some View {
-        VStack {
-            if isLoading {
-                Text("HealthOrder")
-            } else {
-                WelcomeView()
-            }
-        }
-        .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                isLoading = false
-            }
-        }
-        .padding()
+extension AnyTransition {
+    static var moveEdgeAndSuccess: AnyTransition {
+        UINotificationFeedbackGenerator().notificationOccurred(.success)
+        return AnyTransition.move(edge: .leading)
     }
 }
 
-
+struct ContentView: View {
+    @State private var isLoading = true
+    @State private var showLaunchView: Bool = true
+    
+    var body: some View {
+        ZStack {
+            Text("Hi")
+            
+            ZStack{
+                if showLaunchView {
+                    LaunchView(showLaunchView: $showLaunchView)
+                        .transition(.moveEdgeAndSuccess)
+                }
+            }
+            .zIndex(2.0)
+        }
+    }
+}
 
 #Preview {
     ContentView()
